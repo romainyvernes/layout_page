@@ -52,3 +52,14 @@ table {
 *::after {
   box-sizing: border-box;
 }
+
+/* Reset buttons' default border and background */
+button {
+	border: none;
+	background-color: transparent;
+}
+
+/* Remove default underline on links */
+a {
+	text-decoration: none;
+}
