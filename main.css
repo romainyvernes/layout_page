@@ -1,3 +1,10 @@
+/* import fonts */
+@font-face {
+	font-family: 'Cheltenham Bold Italic';
+	src: url('assets/fonts/Cheltenham\ Bold\ Italic.otf');
+}
+
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -59,7 +66,474 @@ button {
 	background-color: transparent;
 }
 
-/* Remove default underline on links */
+/* Remove default underline on links, and trigger only on hover */
 a {
 	text-decoration: none;
+	color: inherit;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+/* set default line height for all text-related elements */
+h1, h2, h3, p, figcaption {
+	line-height: 1.2em;
+}
+
+/* set width of images and videos so they fit their container */
+img, iframe {
+	width: 100%;
+}
+
+/*
+	Page Header
+*/
+
+.times-logo {
+	height: 33px;
+}
+
+.page-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 700;
+	padding: 0.1em 1em;
+	border-bottom: 1px solid #e2e2e2;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	background-color: #fff;
+}
+
+.header-nav {
+	display: flex;
+	align-items: center;
+}
+
+.material-icons {
+	font-size: 1.1em;
+}
+
+.fa-search {
+	margin: 0 2em 0 1em;
+}
+
+.header-nav a {
+	font-size: 0.9em;
+	letter-spacing: 0.03em;
+	color: #000;
+}
+
+.account-btn {
+	background-color: #547b93;
+	border: 1px solid #2e698e;
+	color: white;
+	padding: 0.8em 1em;
+	font-weight: inherit;
+	border-radius: 4px;
+	font-size: 0.7em;
+}
+
+.account-btn:hover {
+	background-color: #2e698e;
+	cursor: pointer;
+}
+
+/*
+	Page's main section
+*/
+
+main {
+	margin: 6em 0 0 0;
+}
+
+/* 
+	Header inside article element
+*/
+.main-header {
+	margin: 2em auto;
+}
+
+/* apply same width to header, text sections, and footer within main */
+.main-header,
+.article-section,
+.main-footer {
+	width: 600px;
+}
+
+.main-header h1 {
+	font-size: 2.3em;
+	font-family: 'Cheltenham Bold Italic';
+	padding-bottom: 0.6em;
+	border-bottom: 1px solid #ebebeb;
+}
+
+/* social media and sharing links */
+.social-nav {
+	display: flex;
+}
+
+.social-nav li {
+	background-color: #eee;
+	border-radius: 50%;
+	height: 30px;
+	width: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 0.5em;
+}
+
+/* remove left margin for first social media link */
+.social-nav li:nth-child(1) {
+	margin-left: 0;
+}
+
+.social-nav a,
+.social-nav button {
+	font-size: 0.9em;
+	color: #000;
+}
+
+.main-header .social-nav {
+	padding-top: 1.2em;
+}
+
+/* largest image right under headline */
+.main-image-container {
+	width: 100%;
+	max-width: 945px;
+	margin: 0 auto;
+}
+
+/* caption below images and videos */
+.media-caption {
+	color: #585858;
+}
+
+/* caption below main image of the article */
+.main-image-container .media-caption {
+	width: 75%;
+	margin-top: 0.5em;
+}
+
+/* media author's credit */
+.media-caption span {
+	font-size: 0.9em;
+	color: #737373;
+}
+
+/*
+	Article element
+*/
+
+/* sections with text */
+.article-section {
+	margin: 2.5em auto 1em auto;
+	font-size: 1.4em;
+}
+
+.article-section p {
+	margin: 1em 0;
+	line-height: 1.3em;
+}
+
+.article-section a {
+	text-decoration: underline;
+	color: #3c769b;
+}
+
+.article-section h2 {
+	font-weight: bold;
+	font-size: 0.95em;
+}
+
+/* writer's name */
+.writer {
+	font-family: 'Roboto', sans-serif;
+	font-weight: bold;
+	font-size: 0.7em;
+}
+
+.writer a {
+	text-decoration-color: #ccc;
+	color: #000;
+}
+
+.writer a:hover {
+	text-decoration: none;
+}
+
+.article-section .publication-date {
+	font-size: 0.6em;
+	color: #454545;
+	font-family: 'Roboto', sans-serif;
+	margin: 1.5em 0 2.5em 0;
+}
+
+/* subsection inserted within the article's text */
+.stories-signup {
+	border-top: 1px solid #e2e2e2;
+	border-bottom: 1px solid #e2e2e2;
+	padding: 0.5em 2em 0.5em 0;
+	font-size: 0.9em;
+}
+
+.stories-signup strong {
+	font-family: 'Roboto', sans-serif;
+	font-weight: bold;
+	font-size: 0.85em;
+}
+
+/* 
+	Section with illustration thumbnails
+*/
+
+.illustration-section {
+	width: 100%;
+	max-width: 945px;
+	margin: 2em auto 0 auto;
+	padding: 0 1em;
+}
+
+/* illustration title */
+.illustration-section h1 {
+	font-weight: bold;
+	font-size: 1.2em;
+	margin-bottom: 0.3em;
+}
+
+.illustration-description {
+	color: #666;
+	font-size: 0.95em;
+}
+
+.thumbnails-grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 0.5em;
+	margin: 1em 0 4em 0;
+}
+
+/* descriptive text under each thumbnail image */
+.thumbnails-grid p {
+	font-family: 'Roboto', sans-serif;
+	font-size: 0.85em;
+	font-weight: 400;
+	margin-top: 0.5em;
+}
+
+.thumbnails-grid strong {
+	font-weight: bold;
+	font-size: 0.85em;
+	margin-right: 0.5em;
+}
+
+/* create line above authors' names */
+.illustration-author::before {
+	content: '';
+	width: 60px;
+	height: 1px;
+	background-color: #000;
+	display: block;
+	margin-bottom: 1.5em;
+}
+
+.illustration-author {
+	font-size: 0.9em;
+	font-family: 'Roboto', sans-serif;
+}
+
+/*
+	Media illustrations
+*/
+
+/* captions below smaller media content throughout the article */
+.media-caption.secondary {
+	font-size: 0.75em;
+	margin-top: 0.3em;
+}
+
+/* caption below video */
+.video-container .media-caption {
+	width: 85%;
+}
+
+/* caption below telescope picture */
+.telescope-image .media-caption {
+	width: 95%;
+}
+
+/*
+	Footer inside article element
+*/
+
+.main-footer {
+	margin: 0 auto;
+	font-family: 'Roboto', sans-serif;
+	font-size: 0.75em;
+	letter-spacing: -0.01em;
+	color: #666666;
+}
+
+.main-footer p a {
+	text-decoration: underline;
+}
+
+.main-footer a:hover {
+	text-decoration: none;
+}
+
+.footer-bottom {
+	display: flex;
+	justify-content: space-between;
+	font-weight: 700;
+	font-size: 1.4em;
+	margin-top: 1.5em;
+}
+
+.footer-bottom .account-btn {
+	width: 50%; 
+}
+
+/*
+	Bottom navigation section
+*/
+
+.navigation-section::before {
+	content: '';
+	border-top: 2px solid #e2e2e2;
+	border-bottom: 1px solid #e2e2e2;
+	display: block;
+	height: 4px;
+}
+
+.navigation-section {
+	margin: 1em 2.2em 0.5em 2.2em;
+	font-family: 'Roboto', sans-serif;
+	border-bottom: 1px solid #e2e2e2;
+}
+
+.navigation-section header {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	margin: 0.3em 0;
+	font-size: 0.7em;
+	color: #4f748b;
+}
+
+.navigation-section header a {
+	text-decoration: none;
+}
+
+.navigation-section .times-logo {
+	width: 190px;
+}
+
+/* Letter T logo from New York Times */
+.letter-logo {
+	height: 15px;
+	width: 10px;
+}
+
+/* container with lists of navigation links */
+.navigation-section nav {
+	margin: 1em 0;
+}
+
+/* subcontainer of lists of navigation links */
+.nav-items {
+	display: flex;
+	justify-content: space-between;
+	font-size: 0.8em;
+}
+
+
+/* header within each list of navigation links */
+.nav-items h3 {
+	font-weight: bold;
+}
+
+/* individual navigation links */
+.nav-list li {
+	margin: 1em 0;
+}
+
+/* remove bottom margin from the last link of every list */
+.nav-list li:last-child {
+	margin-bottom: 0;
+}
+
+/* list of links under subscribe header */
+.subscribe {
+	border-left: 1px solid #e2e2e2;
+	padding-left: 1em;
+}
+
+.subscribe ul {
+	padding-right: 6em;
+	font-size: 0.85em;
+}
+
+/* special styling for links within subscribe section */
+.bold {
+	font-weight: bold;
+	font-size: 1.5em;
+}
+
+/* targets every icon under subscribe header */
+.bold i {
+	font-size: 0.8em;
+	margin-right: 0.5em;
+}
+
+.bold img {
+	margin-right: 0.4em;
+}
+
+/* aligns text next to third icon with text above */
+.bold:nth-child(3) i {
+	margin-right: 0.55em;
+}
+
+/* aligns text next to fourth icon with text above */
+.bold:nth-child(4) i {
+	margin-right: 0.75em;
+}
+
+/* adds margin below fourth link under subscribe header */
+.bold:nth-child(4) {
+	margin-bottom: 1.5em;
+}
+
+/* targets second unordered list within subscribe section */
+.subscribe ul:nth-child(3) {
+	margin-top: 1em;
+	border-top: 1px solid #e2e2e2;
+	padding-top: 0.5em;
+}
+
+/*
+	Page footer
+*/
+
+.page-footer {
+	margin: 0 auto 5em auto;
+	text-align: center;
+	font-family: 'Roboto', sans-serif;
+	font-size: 0.7em;
+	color: #666666;
+	width: 75%;
+}
+
+.page-footer ul {
+	display: flex;
+	justify-content: center;
+	margin: 1.5em 0;
+	flex-wrap: wrap;
+	gap: 1.5em;
 }
