@@ -147,6 +147,7 @@ img, iframe {
 	cursor: pointer;
 }
 
+/* user icon to substitute subscribe and login buttons */
 .fa-user {
 	display: none;
 }
@@ -600,6 +601,7 @@ main {
 		display: none;
 	}
 
+	/* display user icon instead of account subscribe and login buttons */
 	.fa-user {
 		display: block;
 		font-size: 1em;
