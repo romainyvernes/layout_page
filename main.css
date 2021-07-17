@@ -60,6 +60,11 @@ table {
   box-sizing: border-box;
 }
 
+/* disable horizontal scroll */
+body {
+	overflow-x: hidden;
+}
+
 /* Reset buttons' default border and background */
 button {
 	border: none;
@@ -142,6 +147,10 @@ img, iframe {
 	cursor: pointer;
 }
 
+.fa-user {
+	display: none;
+}
+
 /*
 	Page's main section
 */
@@ -155,13 +164,15 @@ main {
 */
 .main-header {
 	margin: 2em auto;
+	padding: 0 1.5em;
 }
 
 /* apply same width to header, text sections, and footer within main */
 .main-header,
 .article-section,
 .main-footer {
-	width: 600px;
+	max-width: 600px;
+	width: 100%;
 }
 
 .main-header h1 {
@@ -295,8 +306,10 @@ main {
 .illustration-section {
 	width: 100%;
 	max-width: 945px;
+	min-width: 720px;
 	margin: 2em auto 0 auto;
-	padding: 0 1em;
+	padding: 0 1.3em;
+	overflow-x: hidden;
 }
 
 /* illustration title */
@@ -396,7 +409,8 @@ main {
 }
 
 .footer-bottom .account-btn {
-	width: 50%; 
+	width: 50%;
+	margin-right: 2.5em;
 }
 
 /*
@@ -412,9 +426,10 @@ main {
 }
 
 .navigation-section {
-	margin: 1em 2.2em 0.5em 2.2em;
+	margin: 4em 2.2em 0.5em 2.2em;
 	font-family: 'Roboto', sans-serif;
 	border-bottom: 1px solid #e2e2e2;
+	padding-bottom: 1em;
 }
 
 .navigation-section header {
@@ -442,7 +457,7 @@ main {
 
 /* container with lists of navigation links */
 .navigation-section nav {
-	margin: 1em 0;
+	margin-top: 1em;
 }
 
 /* subcontainer of lists of navigation links */
@@ -527,7 +542,7 @@ main {
 	font-family: 'Roboto', sans-serif;
 	font-size: 0.7em;
 	color: #666666;
-	width: 75%;
+	padding: 0 1.5em;
 }
 
 .page-footer ul {
@@ -536,4 +551,130 @@ main {
 	margin: 1.5em 0;
 	flex-wrap: wrap;
 	gap: 1.5em;
+}
+
+/* Responsiveness */
+@media (max-width: 1150px) {
+	/* remove all navigation links from display */
+	.subscribe,
+	.nav-list {
+		display: none;
+	}
+
+	/* display navigation lists horizontally */
+	.nav-items {
+		flex-direction: column;
+	}
+
+	/* display border at the top of every navigation list */
+	.nav-items li {
+		border-top: 1px solid #e2e2e2;
+		padding: 1.1em 0;
+	}
+
+	/* insert text in front of header of "more" list */
+	.nav-items li:nth-child(5) h3::before {
+		content: "LISTINGS & ";
+	}
+
+	/* remove margins from both sides of nav section  */
+	.navigation-section {
+		padding-bottom: 0;
+		margin-left: 0em;
+		margin-right: 0em;
+	}
+
+	/* insert responsive margins within nav section  */
+	.navigation-section header,
+	.navigation-section nav {
+		margin-left: 3vw;
+		margin-right: 3vw;
+	}
+}
+
+@media (max-width: 1025px) {
+	/* remove from display magnifying glass and theme link in page header  */
+	.header-nav .fa-search,
+	.header-nav a,
+	.page-header .account-btn {
+		display: none;
+	}
+
+	.fa-user {
+		display: block;
+		font-size: 1em;
+	}
+}
+
+/* insert left margin to caption below largest image when viewport width drops 
+below image's maximum width of 945 pixels */
+@media (max-width: 945px) {
+	.main-image-container .media-caption {
+		margin-left: 1.4em;
+	}
+}
+
+@media (max-width: 740px) {
+	/* shrink article's headline */
+	.main-header h1 {
+		font-size: 1.9em;
+	}
+
+	/* shrink text throughout article */
+	.article-section {
+		font-size: 1.25em;
+	}
+
+	/* insert padding on both sides of text and headers throughout article so they
+	don't touch the edge of the window */
+	.article-section p,
+	.article-section h2 {
+		padding-left: 1em;
+		padding-right: 1em;
+	}
+
+	.article-section address {
+		padding-left: 1.4em;
+	}
+
+	.article-section time {
+		padding-left: 0.6em;
+	}
+
+	.main-footer {
+		padding-left: 1.5em;
+		padding-right: 1.5em;
+	}
+	/* set padding on both side of media content within article to keep them
+	aligned with the text above and below */
+	.article-section figure {
+		padding-left: 1em;
+		padding-right: 1em;
+	}
+}
+
+@media (max-width: 600px) {
+	/* insert left margin to caption below media content throughout the article 
+	when viewport width drops below article's maximum width of 600 pixels */
+	.media-caption {
+		margin-left: 1.4em;
+	}
+
+	/* display comments button and nav links within article footer horizontally */
+	.footer-bottom {
+		flex-direction: column;
+	}
+
+	/* enlarge comments button across container */
+	.footer-bottom .account-btn {
+		width: 100%;
+		margin-bottom: 1em;
+	}
+
+	/* remove padding on both side of media content within article to allow them
+	to take up the entire viewport width */
+	.article-section figure {
+		padding-left: 0;
+		padding-right: 0;
+	}
 }
